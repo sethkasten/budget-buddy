@@ -4,10 +4,90 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Header Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Budget Buddy</title>
   </head>
   <body>
+    <header class="header">
+      <h1 class="page-title">Budget Buddy</h1>
+      <button class="clear">Clear</button>
+    </header>
+    <main class="main">
+      <form>
+        <label for="budget" name="budget">Budget</label>
+        <input type="text" placeholder="Budget" name="budget" id="budget" />
+        <button>Update Balance</button>
+      </form>
+      <table>
+        <tr>
+          <td>Remaining Balance:</td>
+        </tr>
+        <tr>
+          <td>Total:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Bills:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Clothing:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Entertainment:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Food:</td>
+          <td></td>
+        </tr>
+      </table>
+      <form>
+        <input
+          type="text"
+          placeholder="Item Description"
+          name="item-description"
+          id="item-description"
+        />
+        <select name="category" id="category">
+          <option value="bills">Bills</option>
+          <option value="clothing">Clothing</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="food">Food</option>
+        </select>
+        <input
+          type="number"
+          placeholder="Amount ($)"
+          step="0.01"
+          name="amount"
+          id="amount"
+        />
+        <button>Add Item</button>
+      </form>
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Category</th>
+          <th>Amount ($)</th>
+          <th></th>
+        </tr>
+      </table>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
