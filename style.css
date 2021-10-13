@@ -1,0 +1,38 @@
+/* resets */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  font-family: "Londrina Solid", cursive;
+}
+
+.main {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+
+.page-title {
+  margin: 5px 0;
+}
+
+.clear {
+  height: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 7.5px;
+}
+
+button {
+  font-family: "Quicksand", sans-serif;
+}
+
+input:placeholder-shown {
+  font-family: "Quicksand", sans-serif;
+}
