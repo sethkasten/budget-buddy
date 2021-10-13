@@ -16,7 +16,7 @@ budgetForm.addEventListener("submit", (e) => {
   document.querySelector(".total").textContent = document
     .querySelector(".total")
     .textContent.slice(1);
-  let total = parseInt(document.querySelector(".total").textContent);
+  let total = parseFloat(document.querySelector(".total").textContent);
   let balance = budget - total;
   document.querySelector(".total").textContent = `$${total}`;
   remainingBalance.textContent = `$${balance}`;
@@ -51,9 +51,10 @@ itemDescriptionForm.addEventListener("submit", (e) => {
     .textContent.slice(1);
 
   // sets variable amount to the value we have input
-  let amount = document.querySelector("#amount").value;
+  let amount = parseFloat(document.querySelector("#amount").value);
+  console.log(amount);
   //   sets variable total to the integer found in the selected category
-  let total = parseInt(document.querySelector(`.${category}`).textContent);
+  let total = parseFloat(document.querySelector(`.${category}`).textContent);
   console.log(total);
   //   sets variable balance equal to total + amount
   let balance = total + amount;
