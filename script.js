@@ -21,7 +21,46 @@ budgetForm.addEventListener("submit", (e) => {
   document.querySelector(".total").textContent = `$${total}`;
   remainingBalance.textContent = `$${balance}`;
 });
-console.log();
+
+const calculateTotal = () => {
+  for (let i = 0; i < 5; i++) {
+    if (i === 0) {
+      let td = ".total";
+    } else if (i === 1) {
+      let td = ".Bills";
+    } else if (i === 2) {
+      let td = ".Clothing";
+    } else if (i === 3) {
+      let td = ".Entertainment";
+    } else {
+      let td = ".Food";
+    }
+    document.querySelector(td).textContent = document
+      .querySelector(td)
+      .textContent.slice(1);
+  }
+  document.querySelector(".total").textContent =
+    parseFloat(document.querySelector(".Bills").textContent) +
+    parseFloat(document.querySelector(".Clothing").textContent) +
+    parseFloat(document.querySelector(".Entertainment").textContent) +
+    parseFloat(document.querySelector(".Food").textContent);
+
+  for (let i = 0; i < 5; i++) {
+    if (i === 0) {
+      let td = ".total";
+    } else if (i === 1) {
+      let td = ".Bills";
+    } else if (i === 2) {
+      let td = ".Clothing";
+    } else if (i === 3) {
+      let td = ".Entertainment";
+    } else {
+      let td = ".Food";
+    }
+    document.querySelector(".total").textContent = `$${total}`;
+    // do for all
+  }
+};
 
 itemDescriptionForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -61,11 +100,6 @@ itemDescriptionForm.addEventListener("submit", (e) => {
   console.log(balance);
   //   puts balance into proper td in table
   document.querySelector(`.${category}`).textContent = `$${balance}`;
-
-  //   let budget = document.querySelector("#budget").value;
-  //   let total = parseInt(document.querySelector(".total").textContent);
-  //   let balance = budget - total;
-  //   document.querySelector(".total").textContent = `$${total}`;
 
   itemDescriptionForm.reset();
 });
