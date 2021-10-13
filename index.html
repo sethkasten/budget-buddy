@@ -24,7 +24,7 @@
   <body>
     <header class="header">
       <h1 class="page-title">Budget Buddy</h1>
-      <button class="clear">Clear</button>
+      <button class="clear-delete">Clear</button>
     </header>
     <main class="main">
       <section class="budget-balance-container">
@@ -44,19 +44,19 @@
           </tr>
           <tr>
             <td>Bills:</td>
-            <td></td>
+            <td class="Bills"></td>
           </tr>
           <tr>
             <td>Clothing:</td>
-            <td></td>
+            <td class="Clothing"></td>
           </tr>
           <tr>
             <td>Entertainment:</td>
-            <td></td>
+            <td class="Entertainment"></td>
           </tr>
           <tr>
             <td>Food:</td>
-            <td></td>
+            <td class="Food"></td>
           </tr>
         </table>
       </section>
@@ -71,10 +71,10 @@
 
           <div class="bill-amount-container">
             <select name="category" id="category">
-              <option value="bills">Bills</option>
-              <option value="clothing">Clothing</option>
-              <option value="entertainment">Entertainment</option>
-              <option value="food">Food</option>
+              <option value="Bills">Bills</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Food">Food</option>
             </select>
             <input
               type="number"
@@ -88,7 +88,7 @@
         </form>
       </section>
       <table class="items-table">
-        <tbody>
+        <tbody class="item-table-body">
           <tr>
             <th class="item-header">Item</th>
             <th class="item-header">Category</th>
