@@ -4,7 +4,6 @@ const budgetForm = document.querySelector(".budget-form");
 const remainingBalance = document.querySelector(".balance");
 const itemDescriptionForm = document.querySelector(".item-description-form");
 const itemTableBody = document.querySelector(".item-table-body");
-const items = [];
 const deleteButton = document.querySelector(".delete");
 const clearButton = document.querySelector(".clear");
 
