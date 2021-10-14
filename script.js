@@ -6,6 +6,7 @@ const itemDescriptionForm = document.querySelector(".item-description-form");
 const itemTableBody = document.querySelector(".item-table-body");
 const deleteButton = document.querySelector(".delete");
 const clearButton = document.querySelector(".clear");
+const header = document.querySelector(".header");
 
 document.querySelector(".balance").textContent = "$0";
 document.querySelector(".total").textContent = "$0";
@@ -137,9 +138,15 @@ itemTableBody.addEventListener("click", (e) => {
 });
 
 // clear button
-itemTableBody.addEventListener("click", (e) => {
+header.addEventListener("click", (e) => {
   if (e.target.classList.contains("clear")) {
-    document.querySelector(".items-table").childNodes[0].remove();
+    for (
+      let i = 3;
+      i < document.querySelector(".item-table-body").childNodes.length;
+      i++
+    ) {
+      document.querySelector(".item-table-body").childNodes[i].remove();
+    }
     document.querySelector(".balance").textContent = "$0";
     document.querySelector(".total").textContent = "$0";
     document.querySelector(".Bills").textContent = "$0";
