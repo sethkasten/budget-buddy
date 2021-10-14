@@ -7,6 +7,7 @@ const itemTableBody = document.querySelector(".item-table-body");
 const deleteButton = document.querySelector(".delete");
 const clearButton = document.querySelector(".clear");
 
+document.querySelector(".balance").textContent = "$0";
 document.querySelector(".total").textContent = "$0";
 document.querySelector(".Bills").textContent = "$0";
 document.querySelector(".Clothing").textContent = "$0";
@@ -20,7 +21,9 @@ const updateBalance = () => {
     .textContent.slice(1);
   let total = parseFloat(document.querySelector(".total").textContent);
   let balance = budget - total;
-  document.querySelector(".total").textContent = `$${total}`;
+  if (balance < 0) {
+    alert("Your budget has been exceeded!");
+  }
   document.querySelector(".total").textContent = `$${total}`;
   remainingBalance.textContent = `$${balance}`;
 };
@@ -130,5 +133,18 @@ itemTableBody.addEventListener("click", (e) => {
     e.target.parentNode.parentNode.remove();
     calculateTotal();
     updateBalance();
+  }
+});
+
+// clear button
+itemTableBody.addEventListener("click", (e) => {
+  if (e.target.classList.contains("clear")) {
+    document.querySelector(".items-table").childNodes[0].remove();
+    document.querySelector(".balance").textContent = "$0";
+    document.querySelector(".total").textContent = "$0";
+    document.querySelector(".Bills").textContent = "$0";
+    document.querySelector(".Clothing").textContent = "$0";
+    document.querySelector(".Entertainment").textContent = "$0";
+    document.querySelector(".Food").textContent = "$0";
   }
 });
