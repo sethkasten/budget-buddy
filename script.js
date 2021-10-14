@@ -4,14 +4,15 @@ const budgetForm = document.querySelector(".budget-form");
 const remainingBalance = document.querySelector(".balance");
 const itemDescriptionForm = document.querySelector(".item-description-form");
 const itemTableBody = document.querySelector(".item-table-body");
+const items = [];
+
 document.querySelector(".total").textContent = "$0.00";
 document.querySelector(".Bills").textContent = "$0.00";
 document.querySelector(".Clothing").textContent = "$0.00";
 document.querySelector(".Entertainment").textContent = "$0.00";
 document.querySelector(".Food").textContent = "$0.00";
 
-budgetForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+const updateBalance = () => {
   let budget = document.querySelector("#budget").value;
   document.querySelector(".total").textContent = document
     .querySelector(".total")
@@ -19,21 +20,27 @@ budgetForm.addEventListener("submit", (e) => {
   let total = parseFloat(document.querySelector(".total").textContent);
   let balance = budget - total;
   document.querySelector(".total").textContent = `$${total}`;
+  document.querySelector(".total").textContent = `$${total}`;
   remainingBalance.textContent = `$${balance}`;
+};
+budgetForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  updateBalance();
 });
 
 const calculateTotal = () => {
   for (let i = 0; i < 5; i++) {
+    let td = 0;
     if (i === 0) {
-      let td = ".total";
+      td = ".total";
     } else if (i === 1) {
-      let td = ".Bills";
+      td = ".Bills";
     } else if (i === 2) {
-      let td = ".Clothing";
+      td = ".Clothing";
     } else if (i === 3) {
-      let td = ".Entertainment";
+      td = ".Entertainment";
     } else {
-      let td = ".Food";
+      td = ".Food";
     }
     document.querySelector(td).textContent = document
       .querySelector(td)
@@ -46,19 +53,26 @@ const calculateTotal = () => {
     parseFloat(document.querySelector(".Food").textContent);
 
   for (let i = 0; i < 5; i++) {
+    let amount = 0;
+    let td = 0;
     if (i === 0) {
-      let td = ".total";
+      amount = document.querySelector(".total").textContent;
+      td = ".total";
     } else if (i === 1) {
-      let td = ".Bills";
+      amount = document.querySelector(".Bills").textContent;
+      td = ".Bills";
     } else if (i === 2) {
-      let td = ".Clothing";
+      amount = document.querySelector(".Clothing").textContent;
+      td = ".Clothing";
     } else if (i === 3) {
-      let td = ".Entertainment";
+      amount = document.querySelector(".Entertainment").textContent;
+      td = ".Entertainment";
     } else {
-      let td = ".Food";
+      amount = document.querySelector(".Food").textContent;
+      td = ".Food";
     }
-    document.querySelector(".total").textContent = `$${total}`;
-    // do for all
+
+    document.querySelector(td).textContent = `$${amount}`;
   }
 };
 
@@ -100,6 +114,7 @@ itemDescriptionForm.addEventListener("submit", (e) => {
   console.log(balance);
   //   puts balance into proper td in table
   document.querySelector(`.${category}`).textContent = `$${balance}`;
-
+  calculateTotal();
+  updateBalance();
   itemDescriptionForm.reset();
 });
