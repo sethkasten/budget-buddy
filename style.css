@@ -23,7 +23,14 @@ body {
   margin: 5px 0;
 }
 
-.clear-delete {
+.clear {
+  height: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 7.5px;
+}
+
+.delete {
   height: 20px;
   background-color: black;
   color: white;
