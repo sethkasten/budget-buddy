@@ -7,6 +7,7 @@ const itemTableBody = document.querySelector(".item-table-body");
 const deleteButton = document.querySelector(".delete");
 const clearButton = document.querySelector(".clear");
 const header = document.querySelector(".header");
+const clearButton = document.querySelector(".clear");
 
 document.querySelector(".balance").textContent = "$0";
 document.querySelector(".total").textContent = "$0";
@@ -137,21 +138,19 @@ itemTableBody.addEventListener("click", (e) => {
   }
 });
 
-// clear button
-header.addEventListener("click", (e) => {
-  if (e.target.classList.contains("clear")) {
-    for (
-      let i = 3;
-      i < document.querySelector(".item-table-body").childNodes.length;
-      i++
-    ) {
-      document.querySelector(".item-table-body").childNodes[i].remove();
-    }
-    document.querySelector(".balance").textContent = "$0";
-    document.querySelector(".total").textContent = "$0";
-    document.querySelector(".Bills").textContent = "$0";
-    document.querySelector(".Clothing").textContent = "$0";
-    document.querySelector(".Entertainment").textContent = "$0";
-    document.querySelector(".Food").textContent = "$0";
+clearButton.addEventListener("click", () => {
+  for (
+    let i = 3;
+    i < document.querySelector(".item-table-body").childNodes.length;
+    i++
+  ) {
+    document.querySelector(".item-table-body").childNodes[i].remove();
   }
+  document.querySelector(".balance").textContent = "$0";
+  document.querySelector(".total").textContent = "$0";
+  document.querySelector(".Bills").textContent = "$0";
+  document.querySelector(".Clothing").textContent = "$0";
+  document.querySelector(".Entertainment").textContent = "$0";
+  document.querySelector(".Food").textContent = "$0";
+  itemDescriptionForm.reset();
 });
